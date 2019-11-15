@@ -64,14 +64,16 @@ hr {
     display: inline-block;
     margin-left: 10px;
 }
+
 .current-color {
     display: inline-block;
     height: 18px;
     width: 18px;
     border-radius: 50%;
     border: 1px solid #000;
-    margin-left: 10px;   
+    margin-left: 10px;
 }
+
 .prev-color {
     display: inline-block;
     height: 18px;
@@ -80,24 +82,27 @@ hr {
     border: 1px solid #000;
     margin-left: 10px;
 }
+
 .red-circle {
     display: inline-block;
     height: 18px;
     width: 18px;
     border-radius: 50%;
     border: 1px solid #000;
-    margin-left: 10px;   
+    margin-left: 10px;
     background-color: red;
 }
+
 .blue-circle {
     display: inline-block;
     height: 18px;
     width: 18px;
     border-radius: 50%;
     border: 1px solid #000;
-    margin-left: 10px;   
+    margin-left: 10px;
     background-color: blue;
 }
+
 .main-field {
     width: 512px;
     height: 512px;
@@ -129,7 +134,11 @@ hr {
     cursor: pointer;
 }
 
+.active {
+    background-color: lightgray;
+    cursor: pointer;
+}
+
 .imgRRs {
     display: none;
 }
-

@@ -10,6 +10,11 @@ let isDrawing = false;
 let lastX = 0;
 let lastY = 0;
 let color = 'green';
+let currentColor = document.querySelector('.current-color');
+let prevColor = document.querySelector('.prev-color');
+let pencil = document.querySelector('.pencil');
+let colorPicker = document.querySelector('.colorPicker');
+
 
 function draw(e) {
     if (!isDrawing) return;
@@ -74,16 +79,30 @@ let pic = document.querySelector('.pic');
 pic.addEventListener('click', drawPic);
 
 document.addEventListener('keydown', (event) => {
-    if (event.code === 'KeyP') {
+    if (event.code === 'KeyP') { setTimeout(() => {
+        pencil.classList.toggle('active');
+    }, 1000);
+        
+        currentColor.style.backgroundColor = preview.style.background;
+        color = currentColor.style.backgroundColor;
         draw();
     }
+});
+pencil.addEventListener('click', ()=> {
+        currentColor.style.backgroundColor = preview.style.background;
+        color = currentColor.style.backgroundColor;
+        draw();
 });
 
 let red = document.querySelector('.red');
 let blue = document.querySelector('.blue');
-red.onclick = () => color = 'red';
-blue.onclick = () => color = 'blue';
-//let currentColor = document.querySelector('.current-color');
+red.onclick = () => {preview.style.background = currentColor.style.backgroundColor;
+    currentColor.style.backgroundColor = 'red';
+color = 'red'};
+blue.onclick = () => {preview.style.background = currentColor.style.backgroundColor;
+    currentColor.style.backgroundColor = 'blue';
+color = 'blue'};
+
 
 /*
  * Canvas.onclick = function(event) {
@@ -99,9 +118,16 @@ let x = '';
 let y = '';
 
 canvas.addEventListener('mousedown', (e) => {
+    
     [x, y] = [e.offsetX, e.offsetY];
     let p = ctx.getImageData(x, y, 1, 1).data;
     preview.style.background = 'rgb(' + p[0] + ',' + p[1] + ',' + p[2] + ')';
     console.log('rgb(' + p[0] + ',' + p[1] + ',' + p[2] + ')');
 
 });
+
+function clearCanvas() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+let clear = document.querySelector('.clear');
+clear.addEventListener('click', clearCanvas);
