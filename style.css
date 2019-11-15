@@ -107,17 +107,19 @@ hr {
     width: 512px;
     height: 512px;
     position: absolute;
-    top: 16%;
+    top: 10%;
     right: 23%;
     border: 1px solid grey;
 }
-
+.main-field p {
+    text-align: center;
+}
 .switcher {
     width: 120px;
     height: 120px;
     position: absolute;
     top: 20%;
-    right: 10%;
+    right: 7%;
 }
 
 .switch {
@@ -134,11 +136,13 @@ hr {
     cursor: pointer;
 }
 
-.active {
-    background-color: lightgray;
-    cursor: pointer;
+.range input {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    margin-left: 10px;
+    border: 1px solid black;
 }
-
 .imgRRs {
     display: none;
 }
