@@ -29,6 +29,7 @@ const pic = document.querySelector('.pic');
 const red = document.querySelector('.red');
 const blue = document.querySelector('.blue');
 const clear = document.querySelector('.clear');
+const fillBuck = document.querySelector('.fill-bucket');
 
 const range = document.querySelector('.range');
 const colorRange = document.querySelector('.color-range');
@@ -99,8 +100,8 @@ document.addEventListener('keydown', (event) => {
 });
 
 pencil.addEventListener('click', () => {
-  currentColor.style.backgroundColor = preview.style.background;
   color = currentColor.style.backgroundColor;
+  currentColor.style.backgroundColor = preview.style.background;
   draw();
 });
 
@@ -145,4 +146,17 @@ clear.addEventListener('click', clearCanvas);
 
 window.addEventListener('beforeunload', () => {
   localStorage.setItem('canvasImage', canvas.toDataURL());
+});
+
+function fillBucket() {
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = currentColor.style.backgroundColor; 
+}
+
+fillBuck.addEventListener('click', fillBucket);
+
+document.addEventListener('keydown', (event) => {
+  if (event.code === 'KeyB') {
+   fillBucket();
+  }
 });
