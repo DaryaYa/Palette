@@ -2,6 +2,14 @@
 const canvas = document.getElementById('#draw');
 const ctx = canvas.getContext('2d');
 
+if (localStorage.getItem('canvasImage')) {
+  const image = new Image();
+  image.onload = function () {
+    ctx.drawImage(image, 0, 0);
+  };
+  image.src = localStorage.getItem('canvasImage');
+}
+
 ctx.lineJoin = 'round';
 ctx.lineCap = 'round';
 ctx.lineWidth = '15';
@@ -134,3 +142,7 @@ function clearCanvas() {
 }
 
 clear.addEventListener('click', clearCanvas);
+
+window.addEventListener('beforeunload', () => {
+  localStorage.setItem('canvasImage', canvas.toDataURL());
+});
