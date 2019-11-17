@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./images/red.png" type="image/x-icon">
+    <title>PiskelClone</title>
+</head>
+
+<body>
+    <header class="header">
+        <nav>
+            <a href="#"><img src="./images/menu.png" alt="menu"></a>
+        </nav>
+        <h1>CodeJam - Palette</h1>
+    </header>
+    <section class="main">
+        <div class="top-menu">
+            <ul class="top-list">
+                <li class="item">
+                    <a href="#">
+                        <img src="./images/fill-drip.png" alt="Paint bucket">
+                        <p>fill <strong>B</strong>ucket</p>
+                    </a>
+                </li>
+                <li class="item colorPicker">
+                    <a href="#">
+                        <img src="./images/eye-dropper.png" alt="eye-dropper">
+                        <p> <strong>C</strong>olor picker</p>
+                    </a>
+                </li>
+                <li class="item pencil">
+                    <a href="#">
+                        <img src="./images/Vector.png" alt="pencil">
+                        <p><strong>P</strong>encil</p>
+                    </a>
+                </li>
+               
+                <li class="item">
+                    <a href="#">
+                        <img src="./images/exchange-alt.png" alt="Transform">
+                        <p>Transform</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="top-menu">
+            <ul class="top-list">
+                <li class="item">
+                    <a href="#">
+                        <div class="current-color "></div>
+                        <p>Current color</p>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#">
+                        <div class="prev-color preview"></div>
+                        <p>Prev color</p>
+                    </a>
+                </li>
+                <hr>
+                <li class="item red">
+                    <a href="#">
+                        <div class="red-circle"></div>
+                        <p>Red</p>
+                    </a>
+                </li>
+                <li class="item blue">
+                    <a href="#">
+                        <div class="blue-circle"></div>
+                        <p>Blue</p>
+                    </a>
+                </li>
+                <li class="item range">
+                    <a href="#">
+                        <input type="color" class="color-range">
+                        <p>Range color</p>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="main-field">
+                <canvas id="#draw" width="512" height="512"></canvas>
+                <p> 1. a. Choose a picture from the right, b. pick a color from the canvas field with MLB <img src="./images/mouse-left-button.png" alt="MLB"> c. press "P" key or click Pencil, d. draw with MLB pressed <br> OR <br> 2. a. pick a preset color with a click, b. DRAW  </p>
+            </div>
+
+            <div class="switcher top-menu">
+                <ul class="switch">
+                    <li class="item draw4x4 ">
+
+                        <p>4 X 4</p>
+
+                    </li>
+                    <li class="item draw32x32">
+
+                        <p>32 X 32</p>
+
+                    </li>
+                    <li class="item pic">
+
+                        <p>512 X 512</p>
+
+                    </li>
+                    <li class="item clear">
+                        <p>Clear</p>
+                    </li>
+                </ul>
+            </div>
+    </section>
+    <img class="imgRRs" id="#img" src="./data/image.png" alt="rrs" style='display: none'>
+    <script src="index.js"></script>
+</body>
+</html>
