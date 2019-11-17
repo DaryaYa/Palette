@@ -4,7 +4,7 @@ const ctx = canvas.getContext('2d');
 
 if (localStorage.getItem('canvasImage')) {
   const image = new Image();
-  image.onload = function () {
+  image.onload = () => {
     ctx.drawImage(image, 0, 0);
   };
   image.src = localStorage.getItem('canvasImage');
